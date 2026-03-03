@@ -14,6 +14,10 @@ The app fetches this file at runtime:
 
 `https://raw.githubusercontent.com/DouglasReisofc/painelnano/main/config/remote_config.json`
 
+Fallback URL (CDN mirror):
+
+`https://cdn.jsdelivr.net/gh/DouglasReisofc/painelnano@main/config/remote_config.json`
+
 ## Remote config schema
 
 ```json
