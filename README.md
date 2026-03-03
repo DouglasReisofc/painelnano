@@ -9,6 +9,8 @@ Painel de controle gamer para ajustes em tempo real dentro do jogo, com foco em 
 - APK mais recente: `Releases > Latest`
 - Link direto da pagina de releases:  
   `https://github.com/DouglasReisofc/painelnano/releases`
+- Download direto da release inicial (`v2.5`):  
+  `https://github.com/DouglasReisofc/painelnano/releases/download/v2.5/PainelNano-v2.5.apk`
 
 ## O que o app oferece
 
