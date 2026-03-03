@@ -1,0 +1,13 @@
+{
+  "links": {
+    "tiktok": "https://www.tiktok.com/@douglasreis.dev",
+    "instagram": "https://www.instagram.com/douglasreis.dev/",
+    "whatsapp_channel": "https://whatsapp.com/channel/0029VbCBPsX1dAvzDjlx2G2i"
+  },
+  "update": {
+    "version_code": 1250,
+    "version_name": "2.5",
+    "version_notes": "Initial public setup with remote config and in-app update checker.",
+    "update_url": "https://github.com/DouglasReisofc/painelnano/releases"
+  }
+}
