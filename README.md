@@ -1,72 +1,62 @@
 # Painel Nano
 
-Public repository for Painel Nano release management.
+Painel de controle gamer para ajustes em tempo real dentro do jogo, com foco em praticidade, estabilidade e personalizacao.
 
-## What is in this repo
+[Baixar ultima versao (Releases)](https://github.com/DouglasReisofc/painelnano/releases/latest)
 
-- `config/remote_config.json`: remote links and update metadata consumed by the app.
-- Release tags and changelogs.
-- Documentation for update flow.
+## Download
 
-## Remote config URL used by app
+- APK mais recente: `Releases > Latest`
+- Link direto da pagina de releases:  
+  `https://github.com/DouglasReisofc/painelnano/releases`
 
-The app fetches this file at runtime:
+## O que o app oferece
 
-`https://raw.githubusercontent.com/DouglasReisofc/painelnano/main/config/remote_config.json`
+- Painel flutuante in-game com abertura rapida.
+- Ajustes em tempo real de `DPI`, `width`, `height`, `X`, `Y`, preset e demais controles.
+- Alternancias (toggles) visuais para funcoes do helper.
+- Suporte a idioma Portugues (pt-BR) e Ingles.
+- Verificacao de nova versao no proprio app (icone de notificacao no canto superior).
+- Links sociais dinamicos sem precisar recompilar APK.
 
-Fallback URL (CDN mirror):
+## Segurança e uso
 
-`https://cdn.jsdelivr.net/gh/DouglasReisofc/painelnano@main/config/remote_config.json`
+- O Painel Nano nao aplica blacklist propria no usuario.
+- Quando configurado corretamente, o app foi pensado para uso estavel sem gatilhos de bloqueio automatico.
+- Importante: qualquer politica de anti-cheat depende do jogo/plataforma. Configure somente os pacotes desejados e use com responsabilidade.
 
-## Remote config schema
+## Requisitos
 
-```json
-{
-  "links": {
-    "tiktok": "https://www.tiktok.com/@youruser",
-    "instagram": "https://www.instagram.com/youruser/",
-    "whatsapp_channel": "https://whatsapp.com/channel/..."
-  },
-  "update": {
-    "version_code": 1250,
-    "version_name": "2.5",
-    "version_notes": "What changed in this version",
-    "update_url": "https://github.com/DouglasReisofc/painelnano/releases"
-  }
-}
-```
+- Android 4.0+ (minSdk 14).
+- Para funcoes com hook em apps alvo: necessario ambiente com LSPosed ativo.
+- Para quem usa root, o fluxo mais comum e:
+  - Magisk (oficial): `https://github.com/topjohnwu/Magisk`
+  - LSPosed (oficial): `https://github.com/LSPosed/LSPosed`
+- Tambem funciona com outros ambientes que suportem LSPosed corretamente configurado.
 
-## How the in-app update check works
+## Instalacao rapida
 
-- App compares local `versionCode` with `update.version_code` from JSON.
-- If remote is greater, the app shows update state in the top-right menu (bell/update action).
-- Clicking the update action opens `update.update_url`.
-- If remote fetch fails, app uses local fallback URLs and does not crash.
+1. Instale e configure seu ambiente (Magisk/alternativo + LSPosed).
+2. Baixe o APK em `Releases`.
+3. Instale o app e ative o modulo no LSPosed para os pacotes desejados.
+4. Abra o Painel Nano e ajuste os valores no menu flutuante.
 
-## Social links behavior
+## Atualizacoes no app
 
-Social buttons read URLs from remote config keys:
+- O app consulta config remota para links e metadados de update.
+- URL principal:
+  `https://raw.githubusercontent.com/DouglasReisofc/painelnano/main/config/remote_config.json`
+- Fallback CDN:
+  `https://cdn.jsdelivr.net/gh/DouglasReisofc/painelnano@main/config/remote_config.json`
 
-- `links.tiktok`
-- `links.instagram`
-- `links.whatsapp_channel`
+## Informacoes do desenvolvedor
 
-This means you can change social links without shipping a new APK.
+- TikTok: `@douglasreis.dev`
+- Instagram: `@douglasreis.dev`
+- Canal WhatsApp:  
+  `https://whatsapp.com/channel/0029VbCBPsX1dAvzDjlx2G2i`
 
-## Release workflow
+## Estrutura do repositorio
 
-1. Build and publish a new APK.
-2. Create GitHub release and upload APK.
-3. Update `config/remote_config.json`:
-   - increase `update.version_code`
-   - update `version_name`
-   - update `version_notes`
-   - ensure `update_url` points to release page
-4. Commit and push to `main`.
-5. App users will receive update signal automatically.
-
-## Notes
-
-- Keep `version_code` numeric and always increasing.
-- Keep JSON valid (no trailing commas).
-- Prefer updating links via this file instead of hardcoding in app.
+- `config/remote_config.json`: links dinamicos e controle de versao remota.
+- `Releases`: historico oficial de APKs publicados.

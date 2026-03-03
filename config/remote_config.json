@@ -7,7 +7,7 @@
   "update": {
     "version_code": 1250,
     "version_name": "2.5",
-    "version_notes": "Initial public setup with remote config and in-app update checker.",
-    "update_url": "https://github.com/DouglasReisofc/painelnano/releases"
+    "version_notes": "Release inicial publica do Painel Nano.",
+    "update_url": "https://github.com/DouglasReisofc/painelnano/releases/latest"
   }
 }
